@@ -17,3 +17,18 @@ def is_inEdges( val, edges):
         print('[ERROR] %s not in edges'%str(val) )
         return False
     return True
+
+def is_nameExist( name, names ):
+    if name in names:
+        print('[ERROR] %s already exist'%name)
+        return True
+    return False
+
+def is_writeMode( action ):
+    if action.lower() != 'w':
+        print('[ERROR] read only')
+        return False
+    return True
+
+
+     
