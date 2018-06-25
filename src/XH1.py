@@ -86,7 +86,11 @@ class XH1:
 
     # def Fit(self):
     # def ReBin(self):
-
+    # def Integral(self):
+    ## Add error propagation in +-*/
+    # def GetEntries(self):
+    # def GetMax(self):
+    # def GetMin(self):
 
 
     def GetBinWidth(self):
@@ -94,7 +98,6 @@ class XH1:
             return self.bin_edges[1]-self.bin_edges[0]
         else:
             return 0
-
 
     def GetBinContent(self, bin):
         if not is_inBins(bin, self.bins): return 0
@@ -113,7 +116,6 @@ class XH1:
         if not is_inEdges(edge, self.bin_edges): return 0
         idx = np.argwhere(self.bin_edges == edge)
         return np.asscalar(self.errors[idx])
-
     
     def Scale(self, value ):
         self.hist   = self.hist   * value
